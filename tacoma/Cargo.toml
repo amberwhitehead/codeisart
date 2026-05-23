@@ -4,4 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-ferray = "0.4.0"
+anyhow = "1.0.102"
+ferray = { version = "0.4.0", features = [ "random" ] }
+tiny-skia = "0.12.0"
+
