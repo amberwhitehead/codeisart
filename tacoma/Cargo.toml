@@ -6,6 +6,7 @@ edition = "2024"
 [dependencies]
 anyhow = "1.0.102"
 ferray = { version = "0.4.0", features = [ "random" ] }
+noise = "0.9.0"
 num-traits = "0.2.19"
 tiny-skia = "0.12.0"
 

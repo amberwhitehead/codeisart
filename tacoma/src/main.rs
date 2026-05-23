@@ -2,13 +2,17 @@ use ferray::random::{default_rng_seeded};
 use tiny_skia::{Color, Paint, PathBuilder, Pixmap, PremultipliedColorU8, Stroke, Transform};
 use anyhow::{Result, bail};
 use num_traits::float::FloatConst;
+use noise::{NoiseFn, Perlin, Seedable};
 
-fn draw_strand(pixmap: &mut Pixmap, x: f32, y: f32, angle: f32, angle_delta: f32, color: Color) -> Result<()> {
+fn prob(x: f32, y: f32) -> f32 {
+    x * y
+}
+
+fn draw_strand(pixmap: &mut Pixmap, length: f32, width: f32, x: f32, y: f32, angle: f32, angle_delta: f32, color: Color) -> Result<()> {
     let mut paint = Paint::default();
     paint.set_color(color);
     paint.anti_alias = true;
-    let w = 0.02;
-    let width = 0.001;
+    let w = length;
     let (x1, y1) = (x + w * f32::cos(angle), y + w * f32::sin(angle));
     let (x2, y2) = (x1 + w * f32::cos(angle + angle_delta), y1 + w * f32::sin(angle + angle_delta));
     let Some(path) = ({
@@ -43,11 +47,20 @@ fn main() -> Result<()> {
         bail!("pixmap failed");
     };
     pixmap.fill(Color::BLACK);
-    for i in 0..1000 {
-        let (x, y) = (rng.next_f32(), rng.next_f32());
+    let perlin = Perlin::new(1);
+    for i in 0..5000 {
+        let (mut x, mut y) = (0.0, 0.0);
+        while true {
+            (x, y) = (rng.next_f32(), rng.next_f32());
+            let p = prob(x, y);
+            let e = rng.next_f32();
+            if e < p {
+                break;
+            }
+        }
         let angle = rng.next_f32() * 2.0 * std::f32::consts::PI;
         let angle_delta = rng.next_f32() - 0.5;
-        draw_strand(&mut pixmap, x, y, angle, angle_delta, Color::WHITE)?;
+        draw_strand(&mut pixmap, 0.01, 0.001, x, y, angle, angle_delta, Color::WHITE)?;
     }
     pixmap.save_png("out.png")?;
 
