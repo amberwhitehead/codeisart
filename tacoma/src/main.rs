@@ -48,17 +48,20 @@ fn main() -> Result<()> {
     };
     pixmap.fill(Color::BLACK);
     let perlin = Perlin::new(1);
+    let s = 2.0;
     for i in 0..5000 {
         let (mut x, mut y) = (0.0, 0.0);
         while true {
             (x, y) = (rng.next_f32(), rng.next_f32());
-            let p = prob(x, y);
+            //let p = prob(x, y);
+            let p = (perlin.get([(x * s) as f64, (y * s) as f64]) as f32 + 1.0) * 0.5;
             let e = rng.next_f32();
             if e < p {
                 break;
             }
         }
-        let angle = rng.next_f32() * 2.0 * std::f32::consts::PI;
+        //let angle = rng.next_f32() * 2.0 * std::f32::consts::PI;
+        let angle = 1.8 + rng.next_f32() * 1.0;
         let angle_delta = rng.next_f32() - 0.5;
         draw_strand(&mut pixmap, 0.01, 0.001, x, y, angle, angle_delta, Color::WHITE)?;
     }
