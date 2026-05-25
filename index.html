@@ -209,6 +209,12 @@
     <figure>
         <iframe src="https://fragcoord.xyz/embed/tykatgib?viewport=512x512" width="512" height="512" frameborder="0" allowfullscreen allow="autoplay"></iframe>
         <figcaption>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr);">
+                <div style="padding: 20px; border-right: 1px solid; border-bottom: 1px solid;">unsafe translate</div>
+                <div style="padding: 20px; border-bottom: 1px solid;">unsafe static</div>
+                <div style="padding: 20px; border-right: 1px solid;">safe translate</div>
+                <div style="padding: 20px;">safe static</div>
+            </div>
             <a href="https://fragcoord.xyz/s/tykatgib">https://fragcoord.xyz/s/tykatgib</a>
         </figcaption>
     </figure>
@@ -228,7 +234,6 @@ float safe_rand(vec3 x) {
     </textarea>
 </section>
 
-
 <section>
     Perlin Noise <br />
     <small>The only algorithm to win an Academy Award.<br />(Ken Perlin, <em>Academy Award for Technical Achievement</em>, 1997)</small>
@@ -247,9 +252,17 @@ float safe_rand(vec3 x) {
 </section>
 
 <section>
+    psrddnoise <br />
+    <small>Smooth noise</small>
     <figure>
         <iframe src="https://fragcoord.xyz/embed/tlxxl6oh?viewport=640x360" width="640" height="360" frameborder="0" allowfullscreen allow="autoplay"></iframe>
-        <figcaption><a href="https://fragcoord.xyz/s/tlxxl6oh">https://fragcoord.xyz/s/tlxxl6oh</a></figcaption>
+        <figcaption>
+            <div style="display: flex; justify-content: center;">
+                <div style="padding: 20px; border-right: 1px solid;">translate xy</div>
+                <div style="padding: 20px;">translate z</div>
+            </div>
+            <a href="https://fragcoord.xyz/s/tlxxl6oh">https://fragcoord.xyz/s/tlxxl6oh</a>
+        </figcaption>
     </figure>
 </section>
 
@@ -278,6 +291,65 @@ float noise3(vec3 x) {
     </textarea>
 </section>
 
+<section>
+    Fractal Brownian Motion <br />
+    <small>Natural noise</small>
+        <figure>
+            <iframe src="https://fragcoord.xyz/embed/tnitqsh1?viewport=640x360" width="640" height="360" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+            <figcaption>
+                <div style="display: flex; justify-content: center;">
+                    <div style="padding: 20px; border-right: 1px solid;">translate xy</div>
+                    <div style="padding: 20px;">translate z</div>
+                </div>
+                <a href="https://fragcoord.xyz/s/tnitqsh1">https://fragcoord.xyz/s/tnitqsh1</a>
+            </figcaption>
+        </figure>
+</section>
+
+<section data-markdown>
+    <textarea data-template>
+```glsl stretch
+float fbm(vec3 x, int iters, float fratio, float wratio) {
+   float y = 0.0;
+   float w = 1.0;
+   float f = 1.0;
+   float m = 0.0;
+   for (int i = 0; i < iters; i++) {
+      y += w * noise3(x * f);
+      m += w;
+      f *= fratio;
+      w *= wratio;
+   }
+   return y / m;
+}
+// Example: fbm(p * 8.0, 8, 2.0, 0.5)
+    </textarea>
+</section>
+
+<section>
+    Rejection Sampling<br />
+    <small>Use noise as prob density function for accept/reject (whitenoise dither)</small>
+    <figure>
+        <iframe src="https://fragcoord.xyz/embed/t3w5b2re?viewport=640x360" width="640" height="360" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+        <figcaption>
+            <div style="display: flex; justify-content: center;">
+                <div style="padding: 20px; border-right: 1px solid;">translate z</div>
+                <div style="padding: 20px;">static</div>
+            </div>
+            <a href="https://fragcoord.xyz/s/t3w5b2re">https://fragcoord.xyz/s/t3w5b2re</a>
+        </figcaption>
+    </figure>
+</section>
+
+<section data-markdown>
+    <textarea data-template>
+```glsl stretch
+float f = frac(p * 4.0, 8, 2.0, 0.5);
+float n = rand(p0) > (f * 1.2 + 0.6) ? 1.0 : 0.0;
+fragColor = vec4(1.0, 1.0, 1.0, 0.0) * n;
+    </textarea>
+</section>
+
 
 <section>
     Danielle Navarro <br />
@@ -299,448 +371,6 @@ float noise3(vec3 x) {
 <section>
     <img src="gfx/iq.png" />
 </section>
-
-
-<section style="columns: 2;">
-    <figure>
-        <img src="gfx/v3ga/julien-gachadoat.jpg" width="400px">
-        <figcaption>From <em>Human vs. Machine</em> forum at Mirage (2018)</figcaption>
-    </figure>
-    <ul class="small">
-        <li>Website<br /><a href="https://www.v3ga.net/">https://www.v3ga.net/</a></li>
-        <li>Github<br /><a href="https://github.com/v3ga">https://github.com/v3ga</a></li>
-        <li>Bluesky<br /><a href="https://bsky.app/profile/julienv3ga.bsky.social">julienv3ga.bsky.social</a></li>
-    </ul>
-</section>
-
-<section style="columns: 2;">
-    <img src="gfx/v3ga/julien2.png" width="256px">
-    <ul class="small nodot">
-            <li>Abstract form</li>
-            <li>Monochrome</li>
-            <li>Geometric shapes</li>
-            <li>Repetition</li>
-    </ul>
-    <ul class="small nodot">
-        <li>Atari ST demo scene (<span class="highlight">late 1990s</span>)</li>
-        <li>Generative computer drawing (<span class="highlight">since 2002</span>)</li>
-        <li>Teaching creative coding (<span class="highlight">since 2006</span>)</li>
-        <li>Multimedia engineer (<span class="highlight">since 2010</span>)</li>
-        <li>Physical plotters (<span class="highlight">since 2017</span>)</li>
-        <li>NFTs (<span class="highlight">since 2021)</span></li>
-        <li>Historical preservation of computer art (<span class="highlight">since 2023</span>)</li>
-    </ul>
-</section>
-
-<section>
-    Books<br />
-    <a href="https://vetroeditions.com/products/pathways"><img src="gfx/v3ga/pathways.webp" width="400px"></a>
-    <a href="https://vetroeditions.com/products/pathways"><img src="gfx/v3ga/wavespage.webp" width="400px"></a>
-    <p class="citation left">
-        <em>Pathways</em><br />
-        This edition will feature a curated selection of the best plotter artworks of Gachadoat's career to date (2018-2023), and offer a deep dive in his creative and coding processes, inspiration references, and much more.
-    </p>
-</section>
-
-<section>
-    Books<br />
-    <a href="https://rrose-editions.com/portfolio/julien-gachadoat-noir-orion/"><img src="gfx/v3ga/RRose1.jpg" width="400px"></a>
-    <a href="https://rrose-editions.com/portfolio/julien-gachadoat-noir-orion/"><img src="gfx/v3ga/RRose4.jpg" width="400px"></a>
-    <p class="citation left">
-        <em>Noir Orion</em><br />
-        “Noir Orion” is a sketchbook of 63 drawings generated by an algorithm designed to explore the gradual transformation of a simple shape: the circle. On each page, the algorithm applies a series of geometric operations that evolve the circle into increasingly elaborate configurations. Then, in a reversing motion, the forms simplify until they return to lines evocative of a star. The book's visual trajectory weaves a connection between pure mathematical abstraction and a cosmic entity.
-    </p>
-</section>
-
-<section style="columns: 2;">
-    Teaching<br />
-    <p class="small"><em>Initiation au code créatif : générez des objets graphiques</em></p>
-    <figure>
-        <figcaption>
-            <a href="https://www.domestika.org/fr/courses/4034-initiation-au-code-creatif-generez-des-objets-graphiques">
-                https://www.domestika.org/fr/courses/4034-initiation-au-code-creatif-generez-des-objets-graphiques
-            </a>
-        </figcaption>
-        <a href="https://www.domestika.org/fr/courses/4034-initiation-au-code-creatif-generez-des-objets-graphiques">
-            <img src="gfx/v3ga/course.png" width="600px">
-        </a>
-    </figure>
-    <img src="gfx/v3ga/course_action.png" width="600px">
-    <p class="small">In person teaching at Bordeaux Montaigne University in Art</p>
-</section>
-
-<section style="columns: 2;">
-    Historical Preservation<br />
-    <p class="small leftalign">
-         Jean-Paul Delahaye. "Nouveaux dessins géométriques et artistiques avec votre micro-ordinateur", 1985.
-         <br /><br />
-         Microsoft BASIC programs for Canon X-07 computer and Canon X710 plotter.
-         <br />
-         Recoded to p5.js.
-         <br /><br />
-         <a href="https://nextcloud.univ-lille.fr/index.php/s/cwXAAokbbeaykW6?dir=/&editing=false&openfile=true">scanned original book</a>
-         <br />
-         <a href="https://github.com/v3ga/nouveaux_dessins_geometriques_et_artistiques">Github repo</a>
-    </p>
-    <video src="gfx/v3ga/Nouveaux-dessins-web-1080p.mov" width="400px" controls></video>
-</section>
-
-<section style="columns: 2;">
-    <img src="gfx/v3ga/dessin1.png" width="400px"><br /><br />
-    <img src="gfx/v3ga/dessin12.png" width="400px"><br />
-    <br />
-    <img src="gfx/v3ga/dessin12_output.png" width="400px">
-</section>
-
-<section style="columns: 2;">
-    <img src="gfx/v3ga/dessin12_js.png" width="600px">
-    <br /><br />
-    <img src="gfx/v3ga/out12.png" width="400px">
-</section>
-
-<section>
-    Plotter Demo<br />
-    <video src="gfx/v3ga/Axidraw.mp4" controls></video>
-</section>
-
-<section>
-    Plotter Control<br />
-    <img src="gfx/v3ga/inkscape.png" width="460px">
-    <img src="gfx/v3ga/axidrawcontrol.png" width="350px">
-    <p>Processing → SVG → AxiDraw</p>
-</section>
-
-<!-- ART -->
-
-<!-- NOTES 
-https://www.v3ga.net/artworks/plot/emanation-2
-https://www.v3ga.net/artworks/plot/sinewaves  
--->
-
-<section>
-    Julien Gachadoat <br />
-    Selected works, 2018&ndash;2025<br />
-    <div class="tag">
-        Work series are generated digitally using a computer program and have
-        multiple unique instantiation based on a pseudorandom seed.<br /><br />
-        Each presented
-        work is a physical printout together with certificate of authenticity for one seed value.
-        Zoom and pan on some works are editorial and designed to show fine detail.<br />
-    </div><br />
-</section>
-
-<!-- Gray -->
-
-<section>
-    Julien Gachadoat<br />
-    <em>Blue, Black, and Grey</em> (2023)<br />
-    <div class="tag">
-        Uses "Subdivision" algorithm.<br />
-        Drawing based on waveform of EP music release.<br />
-    </div><br />
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/Sato_BBG_Original_Cover.jpg" width="720">
-    </div>
-    <div class="fragment fade-up info"><em>Grey, Vinyl (2023)</em></div>
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/Sato_BBG_221112_115125.jpg" width="720">
-    </div>
-    <div class="fragment fade-up info"><em>Grey-N04, Vinyl (2023)</em></div>
-</section>
-
-<section>
-    <div class="custom zoom">
-        <img src="gfx/v3ga/gray-wall.png" width="1024">
-    </div>
-</section>
-
-<section>
-    Julien Gachadoat<br />
-    <em>Cascades</em> (2019--2024)<br />
-    <div class="tag">
-        Uses vertically modulated sine waves with amplitude and frequency modulated by position.<br />
-        Area between waves filled with vertical stripes with randomized orientation and density.
-    </div><br />
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/Tâche_0332.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Escape after (2024)</em></div>
-</section>
-
-<section>
-    <div class="fragment custom zoom_uu">
-        <img src="gfx/v3ga/_DSC4404.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Stacking (2020)</em></div>
-</section>
-
-<section>
-    <div class="custom zoom">
-        <img src="gfx/v3ga/cascade-wall.png" width="1024">
-    </div>
-</section>
-
-
-
-<section>
-    Julien Gachadoat<br />
-    <em>Cells</em> (2019-2022)<br />
-    <div class="tag">
-        Uses multiple random walks on a grid as basis for Voronoi tesselation.
-    </div><br />
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/_DSC4465.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Parcels (2019)</em></div>
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/_DSC4608.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Groups (2019)</em></div>
-</section>
-
-<section>
-    <div class="custom zoom">
-        <img src="gfx/v3ga/cell-wall.png" width="1024">
-    </div>
-</section>
-
-
-<section>
-    Julien Gachadoat<br />
-    <em>Deformed grids</em> (2018-2025)<br />
-    <div class="tag">
-        Deforms grid into overlapping quadrilaterals. Each quad is then filled with patterns deformed to the
-        shape of the quadrilateral.
-    </div><br />
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/Scripted-scaled.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Scripted (2025)</em></div>
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/_DSC4631.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Eye (2018)</em></div>
-</section>
-
-<section>
-    <div class="fragment custom zoom_u">
-        <img src="gfx/v3ga/Tâche_0336.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Pursuit (2020)</em></div>
-</section>
-
-<section>
-    <div class="custom zoom">
-        <img src="gfx/v3ga/deformed-wall.png" width="1024">
-    </div>
-</section>
-
-
-<section>
-    Julien Gachadoat<br />
-    <em>Fields</em> (2020-2021)<br />
-    <div class="tag">
-        Looks like algorithms based on flow fields.
-    </div><br />
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/_DSC4468.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Émanation-2 (2021)</em></div>
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/Tâche_0342.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Accretion (2020)</em></div>
-</section>
-
-<section>
-    <div class="custom zoom">
-        <img src="gfx/v3ga/field-wall.png" width="1024">
-    </div>
-</section>
-
-
-<section>
-    Julien Gachadoat<br />
-    <em>Fractions</em> (2022-2025)<br />
-    <div class="tag">
-        Variation of "subdivision" algorithm where angle is modified during each level of subdivision.
-    </div><br />
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/_DSC4308.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Fractions-14 (2022)</em></div>
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/Fractions-23-scaled.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Fractions-23 (2024)</em></div>
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/Directions-scaled.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Directions (2024)</em></div>
-</section>
-
-<section>
-    <div class="custom zoom">
-        <img src="gfx/v3ga/fractions-wall.png" width="1024">
-    </div>
-</section>
-
-
-<section>
-    Julien Gachadoat<br />
-    <em>Hexagrid</em> (2018-2022)<br />
-    <div class="tag">
-        Algorithms based on hexagonal tiling, filling each tile with patterns.
-    </div><br />
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/_DSC4485.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Hexgrid (2019)</em></div>
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/_DSC4618.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Signs (2019)</em></div>
-</section>
-
-<section>
-    <div class="custom zoom">
-        <img src="gfx/v3ga/hexgrid-wall.png" width="1024">
-    </div>
-</section>
-
-
-<section>
-    Julien Gachadoat<br />
-    <em>Landscape</em> (2018-2024)<br />
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/46121629_357793138123716_7786252913152413609_n_17976675838176078.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Landscape (2018)</em></div>
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/_DSC4427.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Deeper-02 (2021)</em></div>
-</section>
-
-<section>
-    <div class="custom zoom">
-        <img src="gfx/v3ga/landscape-wall.png" width="1024">
-    </div>
-</section>
-
-
-<section>
-    Julien Gachadoat<br />
-    <em>Orbe</em> (2024)<br />
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/Orbe_22_DxOVP_clean-scaled.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Orbe #22 (2024)</em></div>
-</section>
-
-<section>
-    <div class="fragment custom zoom">
-        <img src="gfx/v3ga/Orbe_1146_ed1_plotted_DxOVP_sized-scaled.jpg" width="500">
-    </div>
-    <div class="fragment fade-up info"><em>Orbe #1146 (2024)</em></div>
-</section>
-
-<section>
-    <div class="custom zoom">
-        <img src="gfx/v3ga/orbe-wall.png" width="1024">
-    </div>
-</section>
-
-<section>
-    P5js Recreation Attempt<br />
-    <em>Grey, Vinyl</em> (2023)<br />
-</section>
-
-<section style="columns: 2;">
-    <img src="gfx/v3ga/Sato_BBG_Original_Cover.jpg" width="600"><br /><br />
-    <ul class="small">
-        <li><a target="_blank" href="https://editor.p5js.org/nwhitehead/sketches/PBxOmhSPb">Fill 1 (Draggable shape)</a></li>
-        <li><a target="_blank" href="https://editor.p5js.org/nwhitehead/sketches/fG320VrqK">Fill 2 (Angle slider)</a></li>
-        <li><a target="_blank" href="https://editor.p5js.org/nwhitehead/sketches/T-K00GyrT">Fill 3 (Infinite lines)</a></li>
-        <li><a target="_blank" href="https://editor.p5js.org/nwhitehead/sketches/3HmC2ts_n">Fill 4 (Clipped lines)</a></li>
-        <li><a target="_blank" href="https://editor.p5js.org/nwhitehead/sketches/EMn7uWL3y">Fill 5 (Density)</a></li>
-        <li><a target="_blank" href="https://editor.p5js.org/nwhitehead/sketches/YXrN8SI0V">Fill 6 (Function)</a></li>
-        <li><a target="_blank" href="https://editor.p5js.org/nwhitehead/sketches/RZG_jyVhL">Fill 7 (Standalone art)</a></li>
-        <li><a target="_blank" href="https://editor.p5js.org/nwhitehead/sketches/w_zeiU4ew">Fill 8 (Angle to middle)</a></li>
-        <li><a target="_blank" href="https://editor.p5js.org/nwhitehead/sketches/s5Fq_zc3s">Fill 9 (Randomized)</a></li>
-    </ul>
-</section>
-
-<!-- <section>
-    <div class="fragment custom zoom_r">
-        <img src="gfx/v3ga/nailedit.png" width="1024">
-    </div>
-</section> -->
-
-<section>
-    P5js Recreation Attempt<br />
-    <em>Accretion</em> (2020)<br />
-</section>
-
-<section style="columns: 2;">
-    <img src="gfx/v3ga/Tâche_0342.jpg" width="600"><br /><br />
-    <ul class="small">
-        <li><a target="_blank" href="https://editor.p5js.org/nwhitehead/sketches/KYkSvK7TR">Fill 11 (Uniform)</a></li>
-        <li><a target="_blank" href="https://editor.p5js.org/nwhitehead/sketches/f9PVaTQ0B">Fill 12 (Noise)</a></li>
-    </ul>
-</section>
-
 
 
 <section>
