@@ -160,146 +160,16 @@
 <!-- TITLE -->
 
 <section data-background-image="gfx/bg2.png">
-    <h2 class="reey title">Programming Art</h2>
-        <br />
-    <small><p>Mathematical Techniques for Artistic Coding<br /><br />
-        <br />
-        <p>Inspired by real artists</p>
-        <br />
+    <h2 class="reey title">code == art</h2>
+    <small><p>The Vector Drawing Art of<br /><br />
+       <span class="reey big">v3ga</span><br /><br />
+       <span class="reey">(Julien Gachadoat)</span><br /><br /><br /><br />
        Nathan Whitehead<br />
-       Jun. 28, 2026
+       Oct. 1, 2025
     </p></small>
 </section>
 
 <!-- ARTIST BIO -->
-
-<section style="columns: 2;">
-    <img src="gfx/danielle.jpg" width="800px">
-    Danielle Navarro
-    <br />
-    <ul class="small">
-        <li>PhD <em>Univ. Adelaide</em><br />Mathematical psychology</li>
-        <li>Works in pharmacometrics</li>
-        <li><em>R</em> language</li>
-        <li>Author:<br /><em>Learning Statistics with R</em><br /><em>ggplot2: the book</em></li>
-    </ul>
-    <p class="reey">data witch</p>
-</section>
-
-<section>
-    Danielle Navarro <br />
-    <em>Silhouettes</em> (2021)<br />
-    <div class="tag">
-        License: CC0 1.0 <br />
-        Repository: <a href="https://github.com/djnavarro/series-silhouettes">djnavarro/series-silhouettes</a> <br />
-        Presented in part (1/63 images)
-    </div><br />
-</section>
-
-<section>
-    <div class="fragment custom zoom_d">
-        <img src="gfx/misc/night-tree_05_534.jpg" width="720">
-    </div>
-    <div class="fragment fade-up info"><em>Night Tree 05 534</em></div>
-</section>
-
-<section>
-    White Noise <br />
-    <small>Pseudo-randomness at every pixel independently</small>
-    <figure>
-        <iframe src="https://fragcoord.xyz/embed/tykatgib?viewport=512x512" width="512" height="512" frameborder="0" allowfullscreen allow="autoplay"></iframe>
-        <figcaption>
-            <a href="https://fragcoord.xyz/s/tykatgib">https://fragcoord.xyz/s/tykatgib</a>
-        </figcaption>
-    </figure>
-</section>
-
-<section data-markdown>
-    <textarea data-template>
-```glsl stretch
-float rand(vec3 x) { 
-    return fract(sin(dot(x,
-        vec3(11.1191, 78.233, 36.15861))) * 43758.5453);
-}
-float safe_rand(vec3 x) {
-    return rand(floor(x * 408.12935));
-}
-```
-    </textarea>
-</section>
-
-
-<section>
-    Perlin Noise <br />
-    <small>The only algorithm to win an Academy Award.<br />(Ken Perlin, <em>Academy Award for Technical Achievement</em>, 1997)</small>
-    <div style="columns: 2;">
-        <img src="gfx/lightcycle.png" />
-        <img src="gfx/Tron-1982.jpg" />
-    </div>
-    <p class="small"><em>Tron</em>, 1982.</p>
-</section>
-
-<section>
-    Modern Successor
-    <br />
-        <img src="gfx/noise.png" /><div>
-        <span class="reey small">tiling, gradients<br /></span></div>
-</section>
-
-<section>
-    <figure>
-        <iframe src="https://fragcoord.xyz/embed/tlxxl6oh?viewport=640x360" width="640" height="360" frameborder="0" allowfullscreen allow="autoplay"></iframe>
-        <figcaption><a href="https://fragcoord.xyz/s/tlxxl6oh">https://fragcoord.xyz/s/tlxxl6oh</a></figcaption>
-    </figure>
-</section>
-
-<section data-markdown>
-    <textarea data-template>
-```glsl stretch
-// Authors: Stefan Gustavson (stefan.gustavson@gmail.com)
-// and Ian McEwan (ijm567@gmail.com)
-// Version 2021-12-02, published under the MIT license
-float psrddnoise(vec3 x, vec3 period, float alpha,
-   out vec3 gradient, out vec3 dg, out vec3 dg2)
-{
-    // ... 300 lines copy/pasted here
-}
-
-// Here is how to use psrdnoise() if you just want
-// float output without gradients or tiling.
-float noise3(vec3 x) {
-   vec3 gradient;
-   vec3 dg;
-   vec3 dg2;
-   return psrddnoise(x, vec3(0.0, 0.0, 0.0), 0.0,
-       gradient, dg, dg2);
-}
-```
-    </textarea>
-</section>
-
-
-<section>
-    Danielle Navarro <br />
-    <em>Hearts, Sampled Unwisely</em> (2020)<br />
-    <div class="tag">
-        License: CC BY 4.0 <br />
-        Repository: <a href="https://github.com/djnavarro/series-heart-samples">djnavarro/series-heart-samples</a> <br />
-        Presented in part (1/11 images)
-    </div><br />
-</section>
-
-<section>
-    <div class="fragment custom zoom_r">
-        <img src="gfx/misc/heart_01_09.png" width="720">
-    </div>
-    <div class="fragment fade-up info"><em>Heart 01 09</em></div>
-</section>
-
-<section>
-    <img src="gfx/iq.png" />
-</section>
-
 
 <section style="columns: 2;">
     <figure>
