@@ -2,11 +2,8 @@ import GlslCanvas from 'glslCanvas';
 import prefix from './prefix.glsl?raw';
 import noise from './noise.glsl?raw';
 import perlin from './perlin.glsl?raw';
-
-function handleButton(evt) {
-    console.log(evt);
-}
-
+import fbm from './fbm.glsl?raw';
+import turbulence from './turbulence.glsl?raw';
 
 document.addEventListener("DOMContentLoaded", (event) => {
     for (const el of document.getElementsByTagName('button')) {
@@ -27,4 +24,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
     addButton('1', noise);
     addButton('2', perlin);
+    addButton('3', fbm);
+    addButton('4', turbulence);
 });
