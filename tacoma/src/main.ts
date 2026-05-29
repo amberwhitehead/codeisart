@@ -1,5 +1,7 @@
 import GlslCanvas from 'glslCanvas';
-import frag from './noise.glsl?raw';
+import prefix from './prefix.glsl?raw';
+import noise from './noise.glsl?raw';
+import perlin from './perlin.glsl?raw';
 
 function handleButton(evt) {
     console.log(evt);
@@ -17,10 +19,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const el = document.createElement('button');
         el.innerText = name;
         el.addEventListener('click', () => {
-            sandbox.load(shaderSrc);
+            sandbox.load(prefix + shaderSrc);
         });
         console.log(el);
-        document.body.appendChild(el);
+        const buttonRow = document.getElementById('buttons');
+        buttonRow.appendChild(el);
     }
-    addButton('1', frag);
+    addButton('1', noise);
+    addButton('2', perlin);
 });

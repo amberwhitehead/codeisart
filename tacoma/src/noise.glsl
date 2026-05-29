@@ -1,10 +1,3 @@
-#ifdef GL_ES
-precision mediump float;
-#endif
-
-uniform vec2 u_resolution;
-uniform float u_time;
-
 
 // white noise (noise from [0, 1] uncorrelated with neighbor pixels)
 float rand(vec3 x) { 

@@ -20,10 +20,14 @@
             transform: translate(-50%,-50%);
             z-index: 0;
         }
-        button {
+        #buttons {
             position: absolute;
             top: 5%;
             z-index: 1;
+        }
+        button {
+            padding: 10px;
+            margin: 10px;
         }
     </style>
   </head>
@@ -32,5 +36,6 @@
         <canvas id="glslCanvas" width="1280" height="768"></canvas>
     </main>
     <script type="module" src="/src/main.ts"></script>
+    <div id="buttons" style="display: flex; flex-direction: row;"></div>
   </body>
 </html>
