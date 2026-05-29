@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shaders</title>
     <style>
+        main {
+            position: relative;
+            height: 100vh;
+            z-index: 0;
+        }
         canvas {
             position: absolute;
             left: 50%;
@@ -13,6 +18,12 @@
             height: 100%;
             object-fit: contain;
             transform: translate(-50%,-50%);
+            z-index: 0;
+        }
+        button {
+            position: absolute;
+            top: 5%;
+            z-index: 1;
         }
     </style>
   </head>

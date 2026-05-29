@@ -1,10 +1,26 @@
 import GlslCanvas from 'glslCanvas';
-import frag from './frag.glsl?raw';
+import frag from './noise.glsl?raw';
+
+function handleButton(evt) {
+    console.log(evt);
+}
+
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    console.log('Hello shaders', GlslCanvas);
+    for (const el of document.getElementsByTagName('button')) {
+        console.log(el);
+        el.addEventListener('click', handleButton);
+    }
     const canvas = document.getElementById("glslCanvas");
     const sandbox = new GlslCanvas(canvas);
-    sandbox.load(frag);
-    document.body.appendChild(canvas);
+    function addButton(name, shaderSrc) {
+        const el = document.createElement('button');
+        el.innerText = name;
+        el.addEventListener('click', () => {
+            sandbox.load(shaderSrc);
+        });
+        console.log(el);
+        document.body.appendChild(el);
+    }
+    addButton('1', frag);
 });
