@@ -321,3 +321,12 @@ float noise3(vec3 x) {
    vec3 dg2;
    return psrddnoise(x, vec3(0.0, 0.0, 0.0), 0.0, gradient, dg, dg2);
 }
+
+// Here is how to use psrdnoise if you just want normal output
+vec3 gnoise3(vec3 x) {
+   vec3 gradient;
+   vec3 dg;
+   vec3 dg2;
+   psrddnoise(x, vec3(0.0, 0.0, 0.0), 0.0, gradient, dg, dg2);
+   return gradient;
+}

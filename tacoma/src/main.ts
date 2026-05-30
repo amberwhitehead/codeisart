@@ -4,6 +4,7 @@ import noise from './noise.glsl?raw';
 import perlin from './perlin.glsl?raw';
 import fbm from './fbm.glsl?raw';
 import turbulence from './turbulence.glsl?raw';
+import nested from './nested.glsl?raw';
 
 document.addEventListener("DOMContentLoaded", (event) => {
     for (const el of document.getElementsByTagName('button')) {
@@ -26,4 +27,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
     addButton('2', perlin);
     addButton('3', fbm);
     addButton('4', turbulence);
+    addButton('5', nested);
 });
