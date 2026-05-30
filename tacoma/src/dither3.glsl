@@ -94,7 +94,7 @@ void main() {
     vec3 col = vec3(0.0);
     vec3 ro = vec3(0.0, 3.0, -3.0);
     ro.yz *= Rot(0.0);
-    ro.xz *= Rot(u_time * 0.8);
+    ro.xz *= Rot(u_time * 0.2);
     float s = 60.0;
     vec3 rd = uv.y > 0.0 ? R(nearest(uv, s), ro, vec3(0.0, 0.0, 0.0), 0.7) : R(uv, ro, vec3(0.0, 0.0, 0.0), 0.7);
     float d = RayMarch(ro, rd);
