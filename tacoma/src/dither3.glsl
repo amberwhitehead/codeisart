@@ -85,20 +85,27 @@ float GetLight(vec3 p) {
     return dif;
 }
 
-void main()
-{
-  vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution.xy) / u_resolution.y;
-  vec3 col = vec3(0);
-  vec3 ro = vec3(0, 3, -3);
-  ro.yz *= Rot(0.0);
-  ro.xz *= Rot(u_time * 0.8);
-  vec3 rd = R(uv, ro, vec3(0, 0, 0), .7);
-  float d = RayMarch(ro, rd);
-  if(d < MAX_DIST) {
-    vec3 p = ro + rd * d;
-    float dif = GetLight(p);
-    col = vec3(dif);
-  }
+vec2 nearest(vec2 p, float s) {
+    return vec2(floor(p.x * s), floor(p.y * s)) / s;
+}
 
-  gl_FragColor = vec4(col, 1.0);
+void main() {
+    vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution.xy) / u_resolution.y;
+    vec3 col = vec3(0.0);
+    vec3 ro = vec3(0.0, 3.0, -3.0);
+    ro.yz *= Rot(0.0);
+    ro.xz *= Rot(u_time * 0.8);
+    float s = 60.0;
+    vec3 rd = uv.y > 0.0 ? R(nearest(uv, s), ro, vec3(0.0, 0.0, 0.0), 0.7) : R(uv, ro, vec3(0.0, 0.0, 0.0), 0.7);
+    float d = RayMarch(ro, rd);
+    float dif;
+    if(d < MAX_DIST) {
+        vec3 p = ro + rd * d;
+        dif = GetLight(p);
+        col = vec3(dif);
+    }
+    float dc = length(uv - vec2(1.0/s/2.0, 1.0/s/2.0) - nearest(uv, s));
+    float cutoff = dif * (1.0 / s / 1.5);
+    vec4 c = vec4(0.0, dc < cutoff ? 1.0 : 0.0, 0.0, 1.0);
+    gl_FragColor = uv.x < 0.0 ? vec4(col, 1.0) : c;
 }
