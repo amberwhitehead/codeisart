@@ -5,7 +5,8 @@ import perlin from './perlin.glsl?raw';
 import fbm from './fbm.glsl?raw';
 import turbulence from './turbulence.glsl?raw';
 import nested from './nested.glsl?raw';
-import dither from './dither1.glsl?raw';
+import dither1 from './dither1.glsl?raw';
+import dither2 from './dither2.glsl?raw';
 
 document.addEventListener("DOMContentLoaded", (event) => {
     for (const el of document.getElementsByTagName('button')) {
@@ -29,5 +30,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     addButton('3', fbm);
     addButton('4', turbulence);
     addButton('5', nested);
-    addButton('6', dither);
+    addButton('6', dither1);
+    addButton('7', dither2);
 });
