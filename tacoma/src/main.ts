@@ -9,6 +9,7 @@ import dither1 from './dither1.glsl?raw';
 import dither2 from './dither2.glsl?raw';
 import dither3 from './dither3.glsl?raw';
 import voronoi from './voronoi.glsl?raw';
+import chaos from './chaos.glsl?raw';
 
 document.addEventListener("DOMContentLoaded", (event) => {
     for (const el of document.getElementsByTagName('button')) {
@@ -36,4 +37,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
     addButton('7', dither2);
     addButton('8', dither3);
     addButton('9', voronoi);
+    addButton('10', chaos);
 });

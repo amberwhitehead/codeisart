@@ -330,3 +330,9 @@ vec3 gnoise3(vec3 x) {
    psrddnoise(x, vec3(0.0, 0.0, 0.0), 0.0, gradient, dg, dg2);
    return gradient;
 }
+
+mat2 rotate2D(float angle) {
+	float s = sin(angle);
+	float c = cos(angle);
+	return mat2(c, s, -s, c);
+}
