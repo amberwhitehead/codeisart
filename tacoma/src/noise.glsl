@@ -19,6 +19,5 @@ void main()
     } else {
         w = rand(p);
     }
-    float n = w;
-    gl_FragColor = vec4(1.0, 1.0, 1.0, 0.0) * n;
+    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0) * w;
 }
