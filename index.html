@@ -18,6 +18,10 @@
         width: 1024px;
         height: 720px;
     }
+    canvas.three-canvas {
+        width: 600px;
+        height: 360px;
+    }
     div.canvas-container {
         width: 100%;
         overflow: hidden;
@@ -174,8 +178,9 @@
         <br />
         <p>Inspired by real artists</p>
         <br />
-       Amber Whitehead &nbsp;&nbsp;<span class="reey highlight">math witch</span>
-        <br />
+       Amber Whitehead<br />
+       <span class="reey highlight">math witch</span><br />
+       <br />
        Jun. 28, 2026
     </p></small>
 </section>
@@ -213,16 +218,15 @@
 </section>
 
 <section>
-    <div class="canvas-container">
-        <canvas class="three-canvas" width="1024" height="720" data-frag="tacoma/src/noise.glsl"></canvas>
-    </div>
 </section>
 
 <section>
     White Noise <br />
     <small>Pseudo-randomness at every pixel independently</small>
     <figure>
-
+        <div class="figure-canvas-container">
+            <canvas class="three-canvas" width="640" height="360" data-frag="tacoma/src/noise.glsl"></canvas>
+        </div>
         <figcaption>
             <div style="display: grid; grid-template-columns: repeat(2, 1fr);">
                 <div style="padding: 20px; border-right: 1px solid; border-bottom: 1px solid;">unsafe translate</div>
