@@ -106,6 +106,7 @@
     }
   },
   "dependencies": {
-    "glslCanvas": "^0.2.6"
+    "glslCanvas": "^0.2.6",
+    "three": "^0.185.0"
   }
 }

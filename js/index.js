@@ -1,4 +1,5 @@
 import Deck, { VERSION } from './reveal.js'
+import * as THREE from 'three';
 
 /**
  * Expose the Reveal class to the window. To create a
@@ -11,7 +12,7 @@ import Deck, { VERSION } from './reveal.js'
  * });
  */
 let Reveal = Deck;
-
+Reveal.THREE = THREE;
 
 /**
  * The below is a thin shell that mimics the pre 4.0
