@@ -2,8 +2,8 @@
 THREE = Reveal.THREE;
 
 document.querySelectorAll(".three-canvas").forEach(async (canvas) => {
+    let prefix = await (await fetch('tacoma/src/prefix.glsl')).text();
     let fragtext = await (await fetch(canvas.dataset.frag)).text();
-    console.log(canvas, fragtext);
     const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, -0.5, 0, 1);
 
@@ -16,9 +16,7 @@ document.querySelectorAll(".three-canvas").forEach(async (canvas) => {
         },
         vertexShader: `void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
         fragmentShader: `
-uniform float u_time;
-uniform vec3 u_resolution;
-
+${prefix}
 ${fragtext}
 `});
     const sprite = new THREE.Sprite(smaterial);
