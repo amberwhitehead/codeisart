@@ -20,12 +20,31 @@ const smaterial = new THREE.ShaderMaterial({
   fragmentShader: `
     uniform float uTime;
     uniform vec3 uResolution;
-    void main() {
-      vec3 p = gl_FragCoord.xyz / uResolution.xyz;
-      float r = abs(sin(uTime));
-      gl_FragColor = vec4(0.0, 0.2, p.y > 0.50 ? 1.0 : 0.0, 1.0);
+
+// white noise (noise from [0, 1] uncorrelated with neighbor pixels)
+float rand(vec3 x) { 
+    return fract(sin(dot(x, vec3(11.1191, 78.233, 36.15861))) * 43758.5453);
+}
+float safe_rand(vec3 x) {
+    return rand(floor(x * 408.12935));
+}
+
+void main()
+{
+    vec3 p = gl_FragCoord.xyz / uResolution.xyy;
+    if (p.x < 0.5) {
+        p.x += uTime * 0.01;
     }
-  `
+    float w;
+    if (p.y < 0.5) {
+        w = safe_rand(p);
+    } else {
+        w = rand(p);
+    }
+    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0) * w;
+}
+
+    `
 });
 const sprite = new THREE.Sprite(smaterial);
 scene.add(sprite);
