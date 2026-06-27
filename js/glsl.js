@@ -10,19 +10,41 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 const geometry = new THREE.BoxGeometry();
 const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
-const cube = new THREE.Mesh(geometry, material);
+
+const smaterial = new THREE.ShaderMaterial({
+  uniforms: {
+    uTime: { value: 0.0 }
+  },
+  vertexShader: `
+    void main() {
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+  `,
+  fragmentShader: `
+    uniform float uTime;
+    void main() {
+      float r = abs(sin(uTime));
+      gl_FragColor = vec4(r, 0.2, 0.5, 1.0);
+    }
+  `
+});
+const cube = new THREE.Mesh(geometry, smaterial);
 scene.add(cube);
 camera.position.z = 5;
+const timer = new THREE.Timer();
+timer.connect(document);
 
 // Reveal.initialize({
 //     hash: true,
 //     // ... add other options here
 // });
 
-function animate() {
+function animate(dt) {
     requestAnimationFrame(animate);
+    timer.update();
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
+    smaterial.uniforms.uTime.value = timer.getElapsed();
     renderer.render(scene, camera);
 }
 animate();
