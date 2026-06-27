@@ -24,7 +24,7 @@ void main()
       p.xy += u_time * 0.02;
    }
    float n = fbm(p * 8.0, 8, 2.0, 0.5) * 0.5 + 0.5;
-   color = vec4(1.0, 1.0, 1.0, 0.0) * n;
+   color = vec4(1.0, 1.0, 1.0, 1.0) * n;
 
    gl_FragColor = color;
 }

@@ -300,7 +300,7 @@ float safe_rand(vec3 x) {
 float psrddnoise(vec3 x, vec3 period, float alpha,
    out vec3 gradient, out vec3 dg, out vec3 dg2)
 {
-    // ... 300 lines copy/pasted here
+    // ... ~300 lines copy/pasted here
 }
 
 // Here is how to use psrdnoise() if you just want
@@ -320,13 +320,14 @@ float noise3(vec3 x) {
     Fractal Brownian Motion <br />
     <small>Natural noise</small>
         <figure>
-            <iframe src="https://fragcoord.xyz/embed/tnitqsh1?viewport=640x360" width="640" height="360" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+            <div class="figure-canvas-container">
+                <canvas class="three-canvas" width="640" height="360" data-frag="tacoma/src/fbm.glsl"></canvas>
+            </div>
             <figcaption>
                 <div style="display: flex; justify-content: center;">
                     <div style="padding: 20px; border-right: 1px solid;">translate xy</div>
                     <div style="padding: 20px;">translate z</div>
                 </div>
-                <a href="https://fragcoord.xyz/s/tnitqsh1">https://fragcoord.xyz/s/tnitqsh1</a>
             </figcaption>
         </figure>
 </section>
@@ -355,13 +356,11 @@ float fbm(vec3 x, int iters, float fratio, float wratio) {
     Rejection Sampling<br />
     <small>Use noise as prob density function for accept/reject (whitenoise dither)</small>
     <figure>
-        <iframe src="https://fragcoord.xyz/embed/t3w5b2re?viewport=640x360" width="640" height="360" frameborder="0" allowfullscreen allow="autoplay"></iframe>
         <figcaption>
             <div style="display: flex; justify-content: center;">
                 <div style="padding: 20px; border-right: 1px solid;">translate z</div>
                 <div style="padding: 20px;">static</div>
             </div>
-            <a href="https://fragcoord.xyz/s/t3w5b2re">https://fragcoord.xyz/s/t3w5b2re</a>
         </figcaption>
     </figure>
 </section>
