@@ -390,6 +390,17 @@ fbm(0.1 *
 <section data-markdown>
     <textarea data-template>
 ```glsl stretch
+void main()
+{
+    vec3 p = gl_FragCoord.xyz / u_resolution.xyy;
+    vec3 p0 = p;
+    p.z += u_time * 0.05;
+    float f = fbm(p * 4.0, 8, 2.0, 0.5);
+    float w = rand(p.x < 0.5 ? p : p0);
+    float n = w > (f * 1.2 + 0.6) ? 1.0 : 0.0;
+    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0) * n;
+}
+```
 </textarea>
 </section>
 
