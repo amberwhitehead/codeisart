@@ -298,6 +298,11 @@ float safe_rand(vec3 x) {
     </figure>
 </section>
 
+<section>
+    <video src="gfx/psrd.webm" controls></video>
+    <p class="reey">basic idea of simplex noise</p>
+</section>
+
 <section data-markdown>
     <textarea data-template>
 ```glsl stretch
@@ -421,6 +426,11 @@ void main()
 </section>
 
 <section>
+    <img src="gfx/sdf.png"></img>
+    <a class="small" href="https://iquilezles.org/articles/distfunctions2d/">https://iquilezles.org/articles/distfunctions2d/</a>
+</section>
+
+<section>
     One Layer Fiber<br />
     <figure>
         <div class="figure-canvas-container">
@@ -429,6 +439,29 @@ void main()
     </figure>
 </section>
 
+<section data-markdown>
+    <textarea data-template>
+```glsl stretch
+    vec2 pi = floor(p * s + 0.5) / s;
+    float mpiy = mod(pi.y * s, 2.0);
+    if (mpiy == 0.0) {
+        pi.x = floor(p.x * s + 1.0) / s - 0.5 / s;
+    }
+    float ids = 0.0;
+    vec2 off = vec2(rand(vec3(pi, ids)),
+        rand(vec3(pi, 1.7 + ids)));
+    vec2 pos = pi + off * (1.0/s/3.0);
+    vec2 x = p - pos;
+    x = rotate(x, off.x * 3.0 + 2.0);
+    float sdf = sdRoundedBox(x, vec2(0.3 / s, 0.03 / s),
+        vec4(0.005 / s));
+    c += sdf < 0.0 ? 0.5 : 0.0;
+    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0) * c;
+```
+</textarea>
+</section>
+
+
 <section>
     Dense Fiber<br />
     <figure>
@@ -436,6 +469,24 @@ void main()
             <canvas class="three-canvas" width="1280" height="720" data-frag="tacoma/src/talk11.glsl"></canvas>
         </div>
     </figure>
+</section>
+
+<section data-markdown>
+    <textarea data-template>
+```glsl stretch
+for (int i = 0; i < 10; i++) {
+   float s = 12.0;
+   vec2 o = vec2(
+     noise3(vec3(float(i), 17.3, 1.0)) * 2.0 - 1.0,
+     noise3(vec3(11.1, float(i) * 7.1, 1.1)) * 2.0 - 1.0
+   );
+   p = p0 + o * 0.08;
+   p.x += u_time * 0.1;
+   // similar to single layer of fiber
+   ...
+}
+```
+</textarea>
 </section>
 
 <section>

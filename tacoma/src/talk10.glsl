@@ -47,11 +47,7 @@ void main() {
     vec2 p = p0;
     float c = 0.0;
     float s = 12.0;
-    vec2 o = vec2(
-        noise3(vec3(0.0, 17.3, 1.0)) * 2.0 - 1.0,
-        noise3(vec3(11.1, 0.0, 1.1)) * 2.0 - 1.0
-    );
-    p = p0 + o * 0.08;
+    p = p0;
     p.x += u_time * 0.1;
     vec2 pi = floor(p * s + 0.5) / s;
     float mpiy = mod(pi.y * s, 2.0);
@@ -61,8 +57,6 @@ void main() {
     float ids = 0.0;
     vec2 off = vec2(rand(vec3(pi, ids)), rand(vec3(pi, 1.7 + ids)));
     vec2 pos = pi + off * (1.0/s/3.0);
-    float d = length(p - pos);
-    float rvp = rand(vec3(pi + o, 0.0));
     vec2 x = p - pos;
     x = rotate(x, off.x * 3.0 + 2.0);
     float sdf = sdRoundedBox(x, vec2(0.3 / s, 0.03 / s), vec4(0.005 / s));
