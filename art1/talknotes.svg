@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4-dev (1:1.4.0-dev+202403210151+2fe0648968)"
+   sodipodi:docname="talknotes.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.60785074"
+     inkscape:cx="450.76856"
+     inkscape:cy="624.3309"
+     inkscape:window-width="1870"
+     inkscape:window-height="1011"
+     inkscape:window-x="50"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="32.953191"
+       y="48.460575"
+       width="501.52472"
+       height="144.84551"
+       id="rect1" />
+    <rect
+       x="32.953191"
+       y="48.460575"
+       width="472.08766"
+       height="149.75169"
+       id="rect2" />
+    <rect
+       x="32.953191"
+       y="48.460575"
+       width="498.25393"
+       height="254.4168"
+       id="rect3" />
+    <rect
+       x="32.953191"
+       y="48.460575"
+       width="445.10369"
+       height="49.992751"
+       id="rect4" />
+    <rect
+       x="32.953191"
+       y="48.460575"
+       width="420.57279"
+       height="184.09493"
+       id="rect5" />
+    <rect
+       x="32.953191"
+       y="48.460575"
+       width="486.80618"
+       height="222.52665"
+       id="rect6" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,60.137268,2.8153611)"
+       id="text1"
+       style="font-size:11.3386px;font-family:enochian;-inkscape-font-specification:'enochian, Normal';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);fill:#ffffff;fill-opacity:0.316794;stroke-width:1.13386;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.224243"><tspan
+         x="32.953125"
+         y="60.815195"
+         id="tspan14"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan13">float rand(vec3 x) { 
+</tspan></tspan><tspan
+         x="32.953125"
+         y="77.065195"
+         id="tspan16"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan15">    return fract(sin(dot(x,
+</tspan></tspan><tspan
+         x="32.953125"
+         y="93.315195"
+         id="tspan18"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan17">        vec3(11.1191, 78.233, 36.15861))) * 43758.5453);
+</tspan></tspan><tspan
+         x="32.953125"
+         y="109.5652"
+         id="tspan20"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan19">}
+</tspan></tspan><tspan
+         x="32.953125"
+         y="125.8152"
+         id="tspan22"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan21">float safe_rand(vec3 x) {
+</tspan></tspan><tspan
+         x="32.953125"
+         y="142.0652"
+         id="tspan24"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan23">    return rand(floor(x * 408.12935));
+</tspan></tspan><tspan
+         x="32.953125"
+         y="158.3152"
+         id="tspan26"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan25">}
+</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,60.137268,41.758144)"
+       id="text2"
+       style="font-size:11.3386px;font-family:enochian;-inkscape-font-specification:'enochian, Normal';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect2);fill:#ffffff;fill-opacity:0.316794;stroke-width:1.13386;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.224243"><tspan
+         x="32.953125"
+         y="60.815195"
+         id="tspan28"><tspan
+           dx="0 -8.0600109 8.0600109"
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan27">// Here is how to use psrdnoise() if you just want
+</tspan></tspan><tspan
+         x="32.953125"
+         y="77.065195"
+         id="tspan30"><tspan
+           dx="0 -8.0600109 8.0600109"
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan29">// float output without gradients or tiling.
+</tspan></tspan><tspan
+         x="32.953125"
+         y="93.315195"
+         id="tspan32"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan31">float noise3(vec3 x) {
+</tspan></tspan><tspan
+         x="32.953125"
+         y="109.5652"
+         id="tspan34"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan33">   vec3 gradient;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="125.8152"
+         id="tspan36"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan35">   vec3 dg;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="142.0652"
+         id="tspan38"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan37">   vec3 dg2;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="158.3152"
+         id="tspan40"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan39">   return psrddnoise(x, vec3(0.0, 0.0, 0.0), 0.0,
+</tspan></tspan><tspan
+         x="32.953125"
+         y="174.5652"
+         id="tspan42"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan41">       gradient, dg, dg2);
+</tspan></tspan><tspan
+         x="32.953125"
+         y="190.8152"
+         id="tspan44"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan43">}
+</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,60.137268,86.109128)"
+       id="text3"
+       style="font-size:11.3386px;font-family:enochian;-inkscape-font-specification:'enochian, Normal';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect3);fill:#ffffff;fill-opacity:0.316794;stroke-width:1.13386;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.224243"><tspan
+         x="32.953125"
+         y="60.815195"
+         id="tspan46"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan45">float fbm(vec3 x, int iters, float fratio, float wratio) {
+</tspan></tspan><tspan
+         x="32.953125"
+         y="77.065195"
+         id="tspan48"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan47">   float y = 0.0;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="93.315195"
+         id="tspan50"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan49">   float w = 1.0;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="109.5652"
+         id="tspan52"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan51">   float f = 1.0;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="125.8152"
+         id="tspan54"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan53">   float m = 0.0;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="142.0652"
+         id="tspan56"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan55">   for (int i = 0; i &lt; iters; i++) {
+</tspan></tspan><tspan
+         x="32.953125"
+         y="158.3152"
+         id="tspan58"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan57">      y += w * noise3(x * f);
+</tspan></tspan><tspan
+         x="32.953125"
+         y="174.5652"
+         id="tspan60"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan59">      m += w;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="190.8152"
+         id="tspan62"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan61">      f *= fratio;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="207.0652"
+         id="tspan64"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan63">      w *= wratio;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="223.3152"
+         id="tspan66"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan65">   }
+</tspan></tspan><tspan
+         x="32.953125"
+         y="239.5652"
+         id="tspan68"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan67">   return y / m;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="255.8152"
+         id="tspan70"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan69">}
+</tspan></tspan><tspan
+         x="32.953125"
+         y="272.0652"
+         id="tspan72"><tspan
+           dx="0 -8.0600109 8.0600109"
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan71">// Example: fbm(p * 8.0, 8, 2.0, 0.5)
+</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,60.137268,157.72111)"
+       id="text4"
+       style="font-size:11.3386px;font-family:enochian;-inkscape-font-specification:'enochian, Normal';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect4);fill:#ffffff;fill-opacity:0.316794;stroke-width:1.13386;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.224243"><tspan
+         x="32.953125"
+         y="60.815195"
+         id="tspan74"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan73">fbm(0.1 * fbm(0.5 * fbm(p * 2.0, 8, 2.0, 0.5) * 0.5 +
+</tspan></tspan><tspan
+         x="32.953125"
+         y="77.065195"
+         id="tspan76"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan75">    p * 10.0, 8, 2.0, 0.5), 8, 2.0, 0.5)
+</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,60.137268,172.43282)"
+       id="text5"
+       style="font-size:11.3386px;font-family:enochian;-inkscape-font-specification:'enochian, Normal';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect5);fill:#ffffff;fill-opacity:0.316794;stroke-width:1.13386;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.224243"><tspan
+         x="32.953125"
+         y="60.815195"
+         id="tspan78"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan77">void main()
+</tspan></tspan><tspan
+         x="32.953125"
+         y="77.065195"
+         id="tspan80"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan79">{
+</tspan></tspan><tspan
+         x="32.953125"
+         y="93.315195"
+         id="tspan82"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan81">    vec3 p = gl_FragCoord.xyz / u_resolution.xyy;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="109.5652"
+         id="tspan84"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan83">    vec3 p0 = p;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="125.8152"
+         id="tspan86"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan85">    p.z += u_time * 0.05;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="142.0652"
+         id="tspan88"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan87">    float f = fbm(p * 4.0, 8, 2.0, 0.5);
+</tspan></tspan><tspan
+         x="32.953125"
+         y="158.3152"
+         id="tspan90"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan89">    float w = rand(p.x &lt; 0.5 ? p : p0);
+</tspan></tspan><tspan
+         x="32.953125"
+         y="174.5652"
+         id="tspan92"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan91">    float n = w &gt; (f * 1.2 + 0.6) ? 1.0 : 0.0;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="190.8152"
+         id="tspan94"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan93">    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0) * n;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="207.0652"
+         id="tspan96"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan95">}
+</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,60.137268,224.14018)"
+       id="text6"
+       style="font-size:11.3386px;font-family:enochian;-inkscape-font-specification:'enochian, Normal';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect6);fill:#ffffff;fill-opacity:0.316794;stroke-width:1.13386;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.224243"><tspan
+         x="32.953125"
+         y="60.815195"
+         id="tspan98"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan97">vec2 pi = floor(p * s + 0.5) / s;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="77.065195"
+         id="tspan100"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan99">float ids = 0.0;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="93.315195"
+         id="tspan102"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan101">vec2 off = vec2(rand(vec3(pi, ids)),
+</tspan></tspan><tspan
+         x="32.953125"
+         y="109.5652"
+         id="tspan104"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan103">    rand(vec3(pi, 1.7 + ids)));
+</tspan></tspan><tspan
+         x="32.953125"
+         y="125.8152"
+         id="tspan106"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan105">vec2 pos = pi + off * (1.0/s/3.0);
+</tspan></tspan><tspan
+         x="32.953125"
+         y="142.0652"
+         id="tspan108"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan107">vec2 x = p - pos;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="158.3152"
+         id="tspan110"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan109">x = rotate(x, off.x * 3.0 + 2.0);
+</tspan></tspan><tspan
+         x="32.953125"
+         y="174.5652"
+         id="tspan112"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan111">float sdf = sdRoundedBox(x, vec2(0.3 / s, 0.03 / s),
+</tspan></tspan><tspan
+         x="32.953125"
+         y="190.8152"
+         id="tspan114"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan113">    vec4(0.005 / s));
+</tspan></tspan><tspan
+         x="32.953125"
+         y="207.0652"
+         id="tspan116"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan115">c += sdf &lt; 0.0 ? 0.5 : 0.0;
+</tspan></tspan><tspan
+         x="32.953125"
+         y="223.3152"
+         id="tspan118"><tspan
+           style="font-size:13px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';fill:#000000;fill-opacity:1"
+           id="tspan117">gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0) * c;
+</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.43958px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.224243"
+       x="19.761023"
+       y="18.782223"
+       id="text7"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         style="stroke-width:0.3"
+         x="19.761023"
+         y="18.782223">not really random</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.43958px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.224243"
+       x="19.785101"
+       y="57.800674"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan8"
+         style="stroke-width:0.3"
+         x="19.785101"
+         y="57.800674">psrdnoise</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.43958px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.224243"
+       x="19.898607"
+       y="102.07597"
+       id="text9"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         style="stroke-width:0.3"
+         x="19.898607"
+         y="102.07597">fbm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.43958px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.224243"
+       x="19.761023"
+       y="173.68788"
+       id="text10"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         style="stroke-width:0.3"
+         x="19.761023"
+         y="173.68788">nested fbm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.43958px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.224243"
+       x="19.761023"
+       y="188.47525"
+       id="text11"><tspan
+         sodipodi:role="line"
+         id="tspan11"
+         style="stroke-width:0.3"
+         x="19.761023"
+         y="188.47525">rejection sampling</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.43958px;font-family:'Monaspace Krypton';-inkscape-font-specification:'Monaspace Krypton, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.224243"
+       x="19.838413"
+       y="240.18262"
+       id="text12"><tspan
+         sodipodi:role="line"
+         id="tspan12"
+         style="stroke-width:0.3"
+         x="19.838413"
+         y="240.18262">one layer fiber</tspan></text>
+  </g>
+</svg>
