@@ -353,9 +353,53 @@ float fbm(vec3 x, int iters, float fratio, float wratio) {
 </section>
 
 <section>
+    <div class="figure-canvas-container">
+        <canvas class="three-canvas" width="640" height="360" data-frag="tacoma/src/nested.glsl"></canvas>
+    </div>
+    <p class="small">basic idea: f(f(f(p) + p))</p>
+</section>
+
+<section data-markdown>
+    <textarea data-template>
+```glsl stretch
+fbm(0.1 * 
+    fbm(0.5 * 
+        fbm(p * 2.0, 8, 2.0, 0.5) * 0.5 +
+        p * 10.0,
+    8, 2.0, 0.5),
+8, 2.0, 0.5)
+</textarea>
+</section>
+
+<section>
     Rejection Sampling<br />
     <small>Use noise as prob density function for accept/reject (whitenoise dither)</small>
     <figure>
+        <div class="figure-canvas-container">
+            <canvas class="three-canvas" width="640" height="360" data-frag="tacoma/src/dither1.glsl"></canvas>
+        </div>
+        <figcaption>
+            <div style="display: flex; justify-content: center;">
+                <div style="padding: 20px; border-right: 1px solid;">translate z</div>
+                <div style="padding: 20px;">static</div>
+            </div>
+        </figcaption>
+    </figure>
+</section>
+
+<section data-markdown>
+    <textarea data-template>
+```glsl stretch
+</textarea>
+</section>
+
+<section>
+    Rejection Sampling<br />
+    <small>Use noise as prob density function for accept/reject (whitenoise dither)</small>
+    <figure>
+        <div class="figure-canvas-container">
+            <canvas class="three-canvas" width="640" height="360" data-frag="tacoma/src/dither2.glsl"></canvas>
+        </div>
         <figcaption>
             <div style="display: flex; justify-content: center;">
                 <div style="padding: 20px; border-right: 1px solid;">translate z</div>
@@ -370,7 +414,7 @@ float fbm(vec3 x, int iters, float fratio, float wratio) {
 ```glsl stretch
 float f = frac(p * 4.0, 8, 2.0, 0.5);
 float n = rand(p0) > (f * 1.2 + 0.6) ? 1.0 : 0.0;
-fragColor = vec4(1.0, 1.0, 1.0, 0.0) * n;
+fragColor = vec4(1.0, 1.0, 1.0, 1.0) * n;
     </textarea>
 </section>
 

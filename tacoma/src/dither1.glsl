@@ -19,16 +19,6 @@ float fbm(vec3 x, int iters, float fratio, float wratio) {
    return y / m;
 }
 
-//   vec3 p0 = gl_FragCoord.xyz / u_resolution.x;
-//   vec3 p = p0;
-//   if (p.x < 0.5) {
-//      p.z += u_time * 0.05;
-//   }
-//   float f = frac(p * 4.0, 8, 2.0, 0.5);
-//   float w = rand(p0);
-//   float n = w > (f * 1.2 + 0.6) ? 1.0 : 0.0;
-//   fragColor = vec4(1.0, 1.0, 1.0, 0.0) * n;
-
 void main()
 {
     vec3 p = gl_FragCoord.xyz / u_resolution.xyy;
@@ -37,5 +27,5 @@ void main()
     float f = fbm(p * 4.0, 8, 2.0, 0.5);
     float w = rand(p.x < 0.5 ? p : p0);
     float n = w > (f * 1.2 + 0.6) ? 1.0 : 0.0;
-    gl_FragColor = vec4(1.0, 1.0, 1.0, 0.0) * n;
+    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0) * n;
 }
