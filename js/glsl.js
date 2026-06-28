@@ -22,14 +22,28 @@ ${fragtext}
     const sprite = new THREE.Sprite(smaterial);
     scene.add(sprite);
     const timer = new THREE.Timer();
-    timer.connect(document);
     console.log(smaterial.uniforms.u_resolution);
 
+    let playing = false;
     function animate(dt) {
-        requestAnimationFrame(animate);
-        timer.update();
-        smaterial.uniforms.u_time.value = timer.getElapsed();
-        renderer.render(scene, camera);
+        if (playing) {
+            requestAnimationFrame(animate);
+            timer.update();
+            smaterial.uniforms.u_time.value = timer.getElapsed();
+            renderer.render(scene, camera);
+        }
     }
-    animate();
+    const button = document.createElement('button');
+    button.innerHTML = '▶️';
+    button.onclick = function() {
+        playing = !playing;
+        if (playing) {
+            button.innerHTML = '⏸️';
+            timer.update(0);
+            animate();
+        } else {
+            button.innerHTML = '▶️';
+        }
+    }
+    canvas.parentElement.append(button);
 });
