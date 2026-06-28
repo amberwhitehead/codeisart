@@ -412,7 +412,7 @@ void main()
 </section>
 
 <section>
-    talk9<br />
+    SDF Fiber<br />
     <figure>
         <div class="figure-canvas-container">
             <canvas class="three-canvas" width="1280" height="720" data-frag="tacoma/src/talk9.glsl"></canvas>
@@ -421,7 +421,7 @@ void main()
 </section>
 
 <section>
-    talk10<br />
+    One Layer Fiber<br />
     <figure>
         <div class="figure-canvas-container">
             <canvas class="three-canvas" width="1280" height="720" data-frag="tacoma/src/talk10.glsl"></canvas>
@@ -430,7 +430,7 @@ void main()
 </section>
 
 <section>
-    talk11<br />
+    Dense Fiber<br />
     <figure>
         <div class="figure-canvas-container">
             <canvas class="three-canvas" width="1280" height="720" data-frag="tacoma/src/talk11.glsl"></canvas>
@@ -439,7 +439,7 @@ void main()
 </section>
 
 <section>
-    talk12<br />
+    Fiber Noise<br />
     <figure>
         <div class="figure-canvas-container">
             <canvas class="three-canvas" width="1280" height="720" data-frag="tacoma/src/talk12.glsl"></canvas>
@@ -467,6 +467,21 @@ fragColor = vec4(1.0, 1.0, 1.0, 1.0) * n;
 
 
 <section>
+    <p class="reey highlight">Creative Programming</p>
+    <p>Tacoma Library, Wheelock Meeting Room</p>
+    <p>Tuesday, July 7, 2026</p>
+    <p>6:30p - 7:30pm</p>
+    <p class="small">Short presentations about interesting code stuff.</p>
+    <p class="small">I'll present an artist and a few of their art pieces then talk about some code related to the art.</p>
+    </p>
+    <p class="small">You are also encouraged to present your own work.</p>
+</section>
+
+<section>
+    The End
+</section>
+
+<section>
     Danielle Navarro <br />
     <em>Hearts, Sampled Unwisely</em> (2020)<br />
     <div class="tag">
@@ -483,20 +498,38 @@ fragColor = vec4(1.0, 1.0, 1.0, 1.0) * n;
     <div class="fragment fade-up info"><em>Heart 01 09</em></div>
 </section>
 
-<section>
-    <p class="reey highlight">Creative Programming</p>
-    <p>Tacoma Library, Wheelock Meeting Room</p>
-    <p>Tuesday, July 7, 2026</p>
-    <p>6:30p - 7:30pm</p>
-    <p class="small">Short presentations about interesting code stuff. I'll present an artist and a few of their art pieces then
-        talk about some code related to the art.
-    </p>
-    <p class="small">You are also encouraged to present your own work.</p>
+<section data-markdown>
+    <textarea data-template>
+```cpp stretch
+    // randomly apply transformation
+    if(f == 0) {
+      // heart
+      s = tan(y / x);
+      u = cos(z);
+      x = u * (16 * pow(sin(s), 3)) / 17;
+      y = u * (13 * cos(s) - 5 * cos(2 * s) - 
+          2 * cos(3 * s) - cos(4 * s)) / 17;
+      z = s * u;
+    } else if(f == 1) {
+      // swirl
+      x = x * cos(x);
+      y = y * sin(y);
+      z = z * sin(z);
+    } else {
+      // scale
+      s = pow(x * x + y * y + z * z, 1 / 3);
+      x = x / s;
+      y = y / s;
+      z = z / s;
+    }
+```
+    </textarea>
 </section>
 
 <section>
-    The End
+    End of Slides
 </section>
+
 
 </div>
 </div>
