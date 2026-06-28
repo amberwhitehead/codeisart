@@ -46,4 +46,8 @@ ${fragtext}
         }
     }
     canvas.parentElement.append(button);
+    Reveal.on('slidechanged', () => {
+        playing = false;
+        button.innerHTML = '▶️';
+    });
 });
