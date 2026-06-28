@@ -22,6 +22,10 @@
         width: 800px;
         height: 562px;
     }
+    canvas.three-canvas.annotated {
+        width: 640px;
+        height: 360px;
+    }
     button {
         position: absolute;
     }
@@ -225,7 +229,7 @@
     <small>Pseudo-randomness at every pixel independently</small>
     <figure>
         <div class="figure-canvas-container">
-            <canvas class="three-canvas" width="640" height="360" data-frag="tacoma/src/noise.glsl"></canvas>
+            <canvas class="three-canvas annotated" width="640" height="360" data-frag="tacoma/src/noise.glsl"></canvas>
         </div>
         <figcaption>
             <div style="display: grid; grid-template-columns: repeat(2, 1fr);">
@@ -283,7 +287,7 @@ float safe_rand(vec3 x) {
     <small>Smooth noise</small>
     <figure>
         <div class="figure-canvas-container">
-            <canvas class="three-canvas" width="640" height="360" data-frag="tacoma/src/perlin.glsl"></canvas>
+            <canvas class="three-canvas annotated" width="640" height="360" data-frag="tacoma/src/perlin.glsl"></canvas>
         </div>
         <figcaption>
             <div style="display: flex; justify-content: center;">
@@ -324,7 +328,7 @@ float noise3(vec3 x) {
     <small>Natural noise</small>
         <figure>
             <div class="figure-canvas-container">
-                <canvas class="three-canvas" width="640" height="360" data-frag="tacoma/src/fbm.glsl"></canvas>
+                <canvas class="three-canvas annotated" width="640" height="360" data-frag="tacoma/src/fbm.glsl"></canvas>
             </div>
             <figcaption>
                 <div style="display: flex; justify-content: center;">
@@ -379,7 +383,7 @@ fbm(0.1 *
     <small>Use noise as prob density function for accept/reject (whitenoise dither)</small>
     <figure>
         <div class="figure-canvas-container">
-            <canvas class="three-canvas" width="640" height="360" data-frag="tacoma/src/dither1.glsl"></canvas>
+            <canvas class="three-canvas annotated" width="640" height="360" data-frag="tacoma/src/dither1.glsl"></canvas>
         </div>
         <figcaption>
             <div style="display: flex; justify-content: center;">
@@ -408,10 +412,10 @@ void main()
 </section>
 
 <section>
-    The Pixels of Reality are not Square<br />
+    talk11<br />
     <figure>
         <div class="figure-canvas-container">
-            <canvas class="three-canvas" width="640" height="360" data-frag="tacoma/src/voronoi.glsl"></canvas>
+            <canvas class="three-canvas" width="1280" height="720" data-frag="tacoma/src/talk11.glsl"></canvas>
         </div>
     </figure>
 </section>
@@ -432,6 +436,15 @@ float f = frac(p * 4.0, 8, 2.0, 0.5);
 float n = rand(p0) > (f * 1.2 + 0.6) ? 1.0 : 0.0;
 fragColor = vec4(1.0, 1.0, 1.0, 1.0) * n;
     </textarea>
+</section>
+
+<section>
+    The Pixels of Reality are not Square<br />
+    <figure>
+        <div class="figure-canvas-container">
+            <canvas class="three-canvas" width="640" height="360" data-frag="tacoma/src/voronoi.glsl"></canvas>
+        </div>
+    </figure>
 </section>
 
 

@@ -63,13 +63,10 @@ void main() {
    vec2 pos = pi + off * (1.0/s/3.0);
    float d = length(p - pos);
    float rvp = rand(vec3(pi + o, 0.0));
-   float thresh = 3.0 * (fbm(vec3(p.x, p.y, u_time * 0.05) * 2.0, 8, 1.5, 0.5) + 0.1);
-   if (rvp > thresh) {
-     vec2 x = p - pos;
-     x = rotate(x, off.x * 3.0 + 2.0);
-     float sdf = sdRoundedBox(x, vec2(0.3 / s, 0.03 / s), vec4(0.005 / s));
-     c += sdf < 0.0 ? 0.5 : 0.0;
-   }
+   vec2 x = p - pos;
+   x = rotate(x, off.x * 3.0 + 2.0);
+   float sdf = sdRoundedBox(x, vec2(0.3 / s, 0.03 / s), vec4(0.005 / s));
+   c += sdf < 0.0 ? 0.5 : 0.0;
  }
  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0) * c;
 }
