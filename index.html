@@ -426,8 +426,9 @@ void main()
 </section>
 
 <section>
-    <img src="gfx/sdf.png"></img>
     <a class="small" href="https://iquilezles.org/articles/distfunctions2d/">https://iquilezles.org/articles/distfunctions2d/</a>
+    <img src="gfx/boxsdf.png" width="500px"></img>
+    <img src="gfx/sdf.png"></img>
 </section>
 
 <section>
@@ -501,10 +502,14 @@ for (int i = 0; i < 10; i++) {
 <section data-markdown>
     <textarea data-template>
 ```glsl stretch
-float f = frac(p * 4.0, 8, 2.0, 0.5);
+float f = fbm(p * 4.0, 8, 2.0, 0.5);
 float n = rand(p0) > (f * 1.2 + 0.6) ? 1.0 : 0.0;
 fragColor = vec4(1.0, 1.0, 1.0, 1.0) * n;
     </textarea>
+</section>
+
+<section>
+    
 </section>
 
 <section>
@@ -515,7 +520,6 @@ fragColor = vec4(1.0, 1.0, 1.0, 1.0) * n;
         </div>
     </figure>
 </section>
-
 
 <section>
     <p class="reey highlight">Creative Programming</p>
