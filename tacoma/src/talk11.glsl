@@ -53,6 +53,7 @@ void main() {
      noise3(vec3(11.1, float(i) * 7.1, 1.1)) * 2.0 - 1.0
    );
    p = p0 + o * 0.08;
+   p.x += u_time * 0.1;
    vec2 pi = floor(p * s + 0.5) / s;
    float mpiy = mod(pi.y * s, 2.0);
    if (mpiy == 0.0) {
