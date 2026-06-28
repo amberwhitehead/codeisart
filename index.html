@@ -19,8 +19,8 @@
         height: 720px;
     }
     canvas.three-canvas {
-        width: 600px;
-        height: 360px;
+        width: 800px;
+        height: 562px;
     }
     button {
         position: absolute;
@@ -408,18 +408,20 @@ void main()
 </section>
 
 <section>
-    Rejection Sampling<br />
-    <small>Use noise as prob density function for accept/reject (whitenoise dither)</small>
+    The Pixels of Reality are not Square<br />
     <figure>
         <div class="figure-canvas-container">
             <canvas class="three-canvas" width="640" height="360" data-frag="tacoma/src/voronoi.glsl"></canvas>
         </div>
-        <figcaption>
-            <div style="display: flex; justify-content: center;">
-                <div style="padding: 20px; border-right: 1px solid;">translate z</div>
-                <div style="padding: 20px;">static</div>
-            </div>
-        </figcaption>
+    </figure>
+</section>
+
+<section>
+    talk12<br />
+    <figure>
+        <div class="figure-canvas-container">
+            <canvas class="three-canvas" width="1280" height="720" data-frag="tacoma/src/talk12.glsl"></canvas>
+        </div>
     </figure>
 </section>
 
@@ -451,9 +453,15 @@ fragColor = vec4(1.0, 1.0, 1.0, 1.0) * n;
 </section>
 
 <section>
-    <img src="gfx/iq.png" />
+    <p class="reey highlight">Creative Programming</p>
+    <p>Tacoma Library, Wheelock Meeting Room</p>
+    <p>Tuesday, July 7, 2026</p>
+    <p>6:30p - 7:30pm</p>
+    <p class="small">Short presentations about interesting code stuff. I'll present an artist and a few of their art pieces then
+        talk about some code related to the art.
+    </p>
+    <p class="small">You are also encouraged to present your own work.</p>
 </section>
-
 
 <section>
     The End
