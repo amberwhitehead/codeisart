@@ -3,6 +3,21 @@ float rand(vec3 x) {
     return fract(sin(dot(x, vec3(11.1191, 78.233, 36.15861))) * 43758.5453);
 }
 
+float fbm(vec3 x, int iters, float fratio, float wratio) {
+   float y = 0.0;
+   float w = 1.0;
+   float s = 1.0;
+   float m = 0.0;
+   for (int i = 0; i < 32; i++) {
+      if (i >= iters) break;
+      y += w * noise3(x * s);
+      m += w;
+      s *= fratio;
+      w *= wratio;
+   }
+   return y / m;
+}
+
 float sdCircle( vec2 p, float r )
 {
    return length(p) - r;
@@ -31,8 +46,8 @@ void main() {
  p0.x *= u_resolution.x / u_resolution.y;
  vec2 p = p0;
  float c = 0.0;
- for (int i = 0; i < 20; i++) {
-   float s = 10.0;
+ for (int i = 0; i < 10; i++) {
+   float s = 12.0;
    vec2 o = vec2(
      noise3(vec3(float(i), 17.3, 1.0)) * 2.0 - 1.0,
      noise3(vec3(11.1, float(i) * 7.1, 1.1)) * 2.0 - 1.0
@@ -48,10 +63,10 @@ void main() {
    vec2 pos = pi + off * (1.0/s/3.0);
    float d = length(p - pos);
    float rvp = rand(vec3(pi + o, 0.0));
-   float thresh = 0.2 - pos.x * pos.x * sin(u_time);
+   float thresh = 3.0 * (fbm(vec3(p.x, p.y, u_time * 0.1) * 2.0, 8, 1.5, 0.5) + 0.1);
    if (rvp > thresh) {
      vec2 x = p - pos;
-     x = rotate(x, off.x * 10.0);
+     x = rotate(x, off.x * 3.0 + 2.0);
      float sdf = sdRoundedBox(x, vec2(0.3 / s, 0.03 / s), vec4(0.005 / s));
      c += sdf < 0.0 ? 0.5 : 0.0;
    }
