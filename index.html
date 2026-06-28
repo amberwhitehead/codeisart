@@ -185,7 +185,7 @@
         <br />
         <p>Inspired by real artists</p>
         <br />
-       Amber Whitehead<br />
+       Amber 🌸 Whitehead<br />
        <span class="reey highlight">math witch</span><br />
        <br />
        Jun. 28, 2026
@@ -222,6 +222,11 @@
         <img src="gfx/misc/night-tree_05_534.jpg" width="720">
     </div>
     <div class="fragment fade-up info"><em>Night Tree 05 534</em></div>
+</section>
+
+<section>
+    <p class="reey">how do you make that background texture?</p>
+    <p class="reey">first you need <span class="highlight">randomness</span></p>
 </section>
 
 <section>
@@ -284,7 +289,7 @@ float safe_rand(vec3 x) {
 
 <section>
     psrdnoise <br />
-    <small>Smooth noise</small>
+    <small class="reey">smooth noise</small>
     <figure>
         <div class="figure-canvas-container">
             <canvas class="three-canvas annotated" width="640" height="360" data-frag="tacoma/src/perlin.glsl"></canvas>
@@ -330,7 +335,7 @@ float noise3(vec3 x) {
 
 <section>
     Fractal Brownian Motion <br />
-    <small>Natural noise</small>
+    <small class="reey">natural noise</small>
         <figure>
             <div class="figure-canvas-container">
                 <canvas class="three-canvas annotated" width="640" height="360" data-frag="tacoma/src/fbm.glsl"></canvas>
@@ -385,7 +390,8 @@ fbm(0.1 *
 
 <section>
     Rejection Sampling<br />
-    <small>Use noise as prob density function for accept/reject (whitenoise dither)</small>
+    <small>Use noise as prob. density function for accept/reject</small>
+    <small class="reey">(whitenoise dither)</small>
     <figure>
         <div class="figure-canvas-container">
             <canvas class="three-canvas annotated" width="640" height="360" data-frag="tacoma/src/dither1.glsl"></canvas>
@@ -444,10 +450,6 @@ void main()
     <textarea data-template>
 ```glsl stretch
     vec2 pi = floor(p * s + 0.5) / s;
-    float mpiy = mod(pi.y * s, 2.0);
-    if (mpiy == 0.0) {
-        pi.x = floor(p.x * s + 1.0) / s - 0.5 / s;
-    }
     float ids = 0.0;
     vec2 off = vec2(rand(vec3(pi, ids)),
         rand(vec3(pi, 1.7 + ids)));
@@ -509,7 +511,8 @@ fragColor = vec4(1.0, 1.0, 1.0, 1.0) * n;
 </section>
 
 <section>
-    
+    <p class="reey">colors points based on closest seed = Voronoi</p>
+    <img src="gfx/voronoi.png">
 </section>
 
 <section>
